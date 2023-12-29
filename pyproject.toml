@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "onion_rings"
+version = "1.0"
+authors = [
+  { name="Matthieu Bloch", email="matthieu.r.bloch@gmail.com" },
+]
+description = "A package to plot nested pie charts (onion rings) using matplotlib"
+keywords = ["pie chart","nested"]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "numpy",
+  "matplotlib",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/mrbloch/OnionRings"
+Issues = ""
