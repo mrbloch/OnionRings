@@ -5,7 +5,7 @@ import numpy as np
 
 # main function
 
-def plot_onion_rings(data,labels,basecolormap="tab10",plot_threshold = 0.02):
+def plot_onion_rings(data,labels,basecolormap="tab10",plot_threshold = 0.02,fontsize=7):
     """
     Plots onion rings based on hierachical data represented by a balanced tree
     Unbalanced tree will be handled in future versions
@@ -75,7 +75,7 @@ def plot_onion_rings(data,labels,basecolormap="tab10",plot_threshold = 0.02):
     # Credit where it's due: https://matplotlib.org/stable/gallery/pie_and_polar_charts/nested_pie.html
                     
     fig, ax = plt.subplots(subplot_kw=dict(projection="polar")) # figure and axes
-    SIZE = 1/(NUMBER_LEVELS+1) # width of onion ring (using +1 leaves a nice hold in the middle)
+    SIZE = 1.0/(NUMBER_LEVELS+1) # width of onion ring (using +1 leaves a nice hold in the middle)
 
     values_normalized = data_array/np.sum(data_array) # Normalize data_array values to [0,1]
     values_in_angles = values_normalized*2*np.pi # Normalize data_array values to [0,2pi]
@@ -133,7 +133,7 @@ def plot_onion_rings(data,labels,basecolormap="tab10",plot_threshold = 0.02):
                 text_rotation = angle+180
             if percent_values_at_level[level][i]>plot_threshold:
                 current_label = labels[level][np.mod(i,NUMBER_ITEMS_PER_LEVEL[level])] + "\n"+str(np.round(percent_values_at_level[level][i]*100,1))+"%\n({})".format(original_values_at_level[level][i])
-                plt.text(angle,3*SIZE+level*2*SIZE,current_label,size=7,ha='center',va='center',color='white',weight='bold',rotation=text_rotation, rotation_mode='anchor',transform_rotates_text=True)
+                plt.text(angle,3*SIZE+level*2*SIZE,current_label,size=fontsize  ,ha='center',va='center',color='white',weight='bold',rotation=text_rotation, rotation_mode='anchor',transform_rotates_text=True)
 
     ax.set_axis_off()
 

@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "onion_rings"
-version = "1.0"
+version = "1.1"
 authors = [
   { name="Matthieu Bloch", email="matthieu.r.bloch@gmail.com" },
 ]
