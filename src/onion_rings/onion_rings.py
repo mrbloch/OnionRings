@@ -25,26 +25,22 @@ def pandas_to_onion(df,slices,slicelabels=None):
     return (counts,slicelabels)
 
 
-
-# main function
-
 def plot_onion_rings(data,labels,shortlabels=None, basecolormap="tab10",plot_threshold = 0.02,fontsize=7,figsize=(10,10),rel_percent=False):
     """
     Plots onion rings based on hierachical data represented by a balanced tree
     Unbalanced tree will be handled in future versions
     
-    Input:
-      - data: nested list in which each level of nesting corresponds to a node/leaf in the tree.
-              only the leafs should be populated, the numbers are automatically aggregated, OR
+   :param data: nested list in which each level of nesting corresponds to a node/leaf in the tree.
+                only the leafs should be populated, the numbers are automatically aggregated, OR
                 a pandas dataframe, in which case the function pandas_to_onion is called to convert it to the appropriate format
-      - labels: nested list containing the labels to be used at each level, OR
-                a list of strings, in which case the function pandas_to_onion is called to convert it to the appropriate format.
-                The list of string is assumed to be the list of columns of the dataframe and used  with pandas groupby to generate the data
-      - basecolormap (optional): base colors to be used to plot the data (default is "tab10") see https://matplotlib.org/stable/users/explain/colors/colormaps.html
-      - plot_threshold (optional): threshold (percentage, e.g. 0.02) below which labels are not included (default is 0.02)
-      - fontsize (optional): fontsize of the labels (default is 7)
-      - figsize (optional): size of the figure (default is (10,10))
-      - rel_percent (optional): if True, the labels will be expressed in terms of relative percentage of the total (default is False)
+   :param labels: nested list containing the labels to be used at each level, OR
+                  a list of strings, in which case the function pandas_to_onion is called to convert it to the appropriate format.
+                  The list of string is assumed to be the list of columns of the dataframe and used  with pandas groupby to generate the data
+    :param basecolormap (optional): base colors to be used to plot the data (default is "tab10") see https://matplotlib.org/stable/users/explain/colors/colormaps.html
+    :param plot_threshold (optional): threshold (percentage, e.g. 0.02) below which labels are not included (default is 0.02)
+    :param fontsize (optional): fontsize of the labels (default is 7)
+    :param figsize (optional): size of the figure (default is (10,10))
+    :param rel_percent (optional): if True, the labels will be expressed in terms of relative percentage of the total (default is False)
     
     Example: tree of depth three with two leaves in each branch (8 leaves total)
       data = [[[1,3],[1,1]],[[4,5],[1,1]]]
