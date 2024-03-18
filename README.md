@@ -71,6 +71,7 @@ The package OnionRings provides two functions whose usage should be self-explana
 
 # Authors
 Matthieu Bloch
+
 Samuel Coogan
 
 # License
